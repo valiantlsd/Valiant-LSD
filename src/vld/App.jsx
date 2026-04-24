@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import "./styles.css";
 import {
   ArrowLeft,
   ArrowRight,
@@ -330,7 +329,7 @@ function SiteShell({ children }) {
 function Navbar() {
   return (
     <header
-      className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-3 border-b py-4 backdrop-blur-xl md:flex-nowrap md:gap-4"
+      className="sticky top-0 z-50 flex items-center justify-between gap-4 border-b py-4 backdrop-blur-xl"
       style={{ borderColor: THEME.line, background: "rgba(9,9,9,0.72)" }}
     >
       <a href="/" className="flex min-w-0 items-center gap-3">
@@ -348,11 +347,11 @@ function Navbar() {
         ))}
       </nav>
 
-      <div className="flex w-full items-center gap-3 sm:w-auto">
-        <a className="button button-small button-secondary flex-1 sm:flex-none" href="/">
+      <div className="flex items-center gap-3">
+        <a className="button button-small button-secondary" href="/">
           Home
         </a>
-        <a className="button button-small button-primary flex-1 sm:flex-none" href={BRAND.bookingUrl}>
+        <a className="button button-small button-primary" href={BRAND.bookingUrl}>
           Apply
         </a>
       </div>
@@ -371,7 +370,7 @@ function HeroSection() {
       >
         <HeroLogoWatermark />
         <Eyebrow icon={Sparkles}>Psychospiritual lifestyle design</Eyebrow>
-        <h1 className="mt-5 max-w-3xl text-[2.85rem] font-semibold leading-[0.94] tracking-[-0.02em] sm:text-5xl md:text-7xl lg:text-8xl">
+        <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.94] tracking-[-0.02em] md:text-7xl lg:text-8xl">
           Discover the system beneath your life.
         </h1>
         <p className="mt-6 max-w-2xl text-xl leading-8" style={{ color: THEME.ink }}>
@@ -878,8 +877,8 @@ function ArticlePage({ article }) {
         </a>
         <div className="mt-8 max-w-4xl">
           <Eyebrow icon={BookOpen}>Journal / media</Eyebrow>
-          <h1 className="mt-5 text-[2.45rem] font-semibold leading-tight tracking-[-0.02em] sm:text-4xl md:text-7xl">{article.title}</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 md:text-xl" style={{ color: THEME.ink }}>
+          <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.02em] md:text-7xl">{article.title}</h1>
+          <p className="mt-6 max-w-3xl text-xl leading-8" style={{ color: THEME.ink }}>
             {article.deck}
           </p>
           <p className="mt-5 text-sm uppercase tracking-[0.24em]" style={{ color: THEME.gold }}>
@@ -943,7 +942,7 @@ function FinalCtaSection() {
   return (
     <section id="apply" className="py-20 text-center md:py-28">
       <Eyebrow>Enter with intention</Eyebrow>
-      <h2 className="mx-auto mt-5 max-w-4xl text-[2.35rem] font-semibold leading-tight tracking-[-0.01em] sm:text-4xl md:text-7xl">
+      <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.01em] md:text-7xl">
         Choose the doorway that matches the work.
       </h2>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -1029,7 +1028,7 @@ function Button({ href, children, variant = "primary" }) {
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-start justify-between gap-6 border-t py-10 md:flex-row md:items-center" style={{ borderColor: THEME.line }}>
+    <footer className="flex flex-col items-center justify-between gap-6 border-t py-10 md:flex-row" style={{ borderColor: THEME.line }}>
       <div className="flex items-center gap-4">
         <a
           href="/"

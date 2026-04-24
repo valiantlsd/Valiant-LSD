@@ -1,9 +1,8 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import AttentionExactApp from "./attention/App.jsx";
+import VldExactApp from "./vld/App.jsx";
 import { AmbientBackground, SiteShell } from "./components/Shared.jsx";
 import { LandingPage } from "./pages/LandingPage.jsx";
-
-const AttentionExactApp = lazy(() => import("./attention/App.jsx"));
-const VldExactApp = lazy(() => import("./vld/App.jsx"));
 
 function normalizePath(pathname) {
   if (pathname === "/attention-mastery") return "/attention-mastery";
@@ -38,16 +37,8 @@ export default function App() {
           </SiteShell>
         </div>
       ) : null}
-      {path === "/vld" ? (
-        <Suspense fallback={<div className="min-h-screen bg-[#090909]" />}>
-          <VldExactApp />
-        </Suspense>
-      ) : null}
-      {path === "/attention-mastery" ? (
-        <Suspense fallback={<div className="min-h-screen bg-[#090909]" />}>
-          <AttentionExactApp />
-        </Suspense>
-      ) : null}
+      {path === "/vld" ? <VldExactApp /> : null}
+      {path === "/attention-mastery" ? <AttentionExactApp /> : null}
     </>
   );
 }
